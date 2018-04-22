@@ -19,4 +19,23 @@ public class Integration1 {
         }
         return Math.ceil(max);
     }
+    public double Integrate(double a, double b, long simulations) {
+        yesArea = 0;
+        noArea = 0;
+        if (a > b) {
+            return Integrate(b, a, simulations);
+        }
+        long turns;
+
+        for (turns = 0;turns<simulations;turns++) {
+            double functionInput = randy.nextDouble();
+            double areaInput = randy.nextDouble() * max();
+            if (f(functionInput) >= areaInput) {
+                yesArea++;
+            } else {
+                noArea++;
+            }
+        }
+        return ((yesArea)/ (yesArea + noArea)) * max();
+    }
     }
