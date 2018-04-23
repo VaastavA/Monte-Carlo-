@@ -38,4 +38,10 @@ public class Integration1 {
         }
         return ((yesArea)/ (yesArea + noArea)) * max();
     }
+    public static void main(String[] args) {
+        Integration1 boi = new Integration1();
+        System.out.println(boi.max());
+        System.out.println(boi.Integrate(0,1,100000));
+
     }
+}
